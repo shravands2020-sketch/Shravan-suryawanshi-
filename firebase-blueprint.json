@@ -1,0 +1,154 @@
+{
+  "entities": {
+    "QuoteRequest": {
+      "title": "QuoteRequest",
+      "description": "Customer battery price quote request and installation enquiry for Nath Battery Latur.",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "Authenticated Firebase UID of the customer."
+        },
+        "category": {
+          "type": "string",
+          "enum": ["CAR", "TWO_WHEELER", "INVERTER", "COMMERCIAL"],
+          "description": "Battery product category."
+        },
+        "vehicleOrSystem": {
+          "type": "string",
+          "description": "Vehicle model or home inverter setup details."
+        },
+        "selectedBatteryModel": {
+          "type": "string",
+          "description": "Selected or recommended battery SKU."
+        },
+        "customerName": {
+          "type": "string",
+          "description": "Customer full name."
+        },
+        "phoneNumber": {
+          "type": "string",
+          "description": "Customer phone number for quote/WhatsApp follow-up."
+        },
+        "exchangeOldBattery": {
+          "type": "boolean",
+          "description": "Whether customer wants old battery buyback discount."
+        },
+        "doorstepService": {
+          "type": "boolean",
+          "description": "Whether customer requests doorstep testing and installation in Latur."
+        },
+        "locationArea": {
+          "type": "string",
+          "description": "Locality in Latur (e.g., Kaneri Chowk, Patel Nagar, MIDC)."
+        },
+        "estimatedPriceInr": {
+          "type": "integer",
+          "description": "Estimated battery price in INR after optional buyback."
+        },
+        "status": {
+          "type": "string",
+          "enum": ["PENDING", "CONFIRMED", "COMPLETED", "CANCELLED"],
+          "description": "Current quote processing status."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp when quote was created via FieldValue.serverTimestamp()."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp when quote was last updated via FieldValue.serverTimestamp()."
+        }
+      },
+      "required": [
+        "userId",
+        "category",
+        "vehicleOrSystem",
+        "selectedBatteryModel",
+        "customerName",
+        "phoneNumber",
+        "exchangeOldBattery",
+        "doorstepService",
+        "locationArea",
+        "estimatedPriceInr",
+        "status",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "ServiceBooking": {
+      "title": "ServiceBooking",
+      "description": "Customer booking for free battery health check, alternator test, or doorstep jumpstart in Latur.",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "Authenticated Firebase UID of the customer."
+        },
+        "serviceType": {
+          "type": "string",
+          "enum": ["FREE_HEALTH_CHECK", "DOORSTEP_JUMPSTART", "ALTERNATOR_TEST", "HOME_INSTALLATION"],
+          "description": "Requested service category."
+        },
+        "vehicleDetails": {
+          "type": "string",
+          "description": "Vehicle or inverter model and location notes."
+        },
+        "customerName": {
+          "type": "string",
+          "description": "Customer full name."
+        },
+        "phoneNumber": {
+          "type": "string",
+          "description": "Customer contact phone number."
+        },
+        "preferredSlot": {
+          "type": "string",
+          "description": "Preferred daily slot between 9:30 AM and 8:00 PM."
+        },
+        "status": {
+          "type": "string",
+          "enum": ["SCHEDULED", "CONFIRMED", "COMPLETED", "CANCELLED"],
+          "description": "Current service booking status."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp when booking was created via FieldValue.serverTimestamp()."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp when booking was last updated via FieldValue.serverTimestamp()."
+        }
+      },
+      "required": [
+        "userId",
+        "serviceType",
+        "vehicleDetails",
+        "customerName",
+        "phoneNumber",
+        "preferredSlot",
+        "status",
+        "createdAt",
+        "updatedAt"
+      ]
+    }
+  },
+  "firestore": {
+    "/users/{userId}/quote_requests/{quoteId}": {
+      "schema": {
+        "$ref": "#/entities/QuoteRequest"
+      },
+      "description": "Per-user battery price quote requests for Nath Battery."
+    },
+    "/users/{userId}/service_bookings/{bookingId}": {
+      "schema": {
+        "$ref": "#/entities/ServiceBooking"
+      },
+      "description": "Per-user free battery checkup and doorstep service bookings."
+    }
+  }
+}

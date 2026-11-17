@@ -1,0 +1,6 @@
+{
+  "name": "Nath Battery",
+  "description": "Interactive 3D automotive and inverter battery dealership app for Nath Battery, Kaneri Chowk, Latur (since 2005) with live quotes and installation booking.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

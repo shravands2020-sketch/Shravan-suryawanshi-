@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Nath Battery</string>
+    <string name="brand_title">NATH BATTERY</string>
+    <string name="brand_est">EST. 2005 • LATUR</string>
+    <string name="hero_headline">Powering Latur’s Vehicles &amp; Homes Since 2005.</string>
+    <string name="hero_subheadline">Authorized Amaron Battery Dealer &amp; Multi-Brand Power Solutions at Kaneri Chowk, Ring Road, Latur. Fast doorstep testing and installation.</string>
+    <string name="cta_book_check">Book Free Check</string>
+    <string name="cta_instant_quote">Get Instant Quote</string>
+    <string name="cta_call_now">Call +91 98506 38290</string>
+    <string name="cta_whatsapp">WhatsApp Quote</string>
+    <string name="sign_in_google">Sign in with Google</string>
+    <string name="shop_address">Jadhav Complex / Patel Nagar, Near Kaneri Chowk, Nanded Ring Road, Latur, Maharashtra 413531</string>
+    <string name="shop_hours">Open Daily • 9:30 AM – 8:00 PM</string>
+    <string name="shop_phone">+91 98506 38290</string>
+</resources>
